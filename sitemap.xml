@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>http://www.thegurucompany.be</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+    <url>
+        <loc>http://www.thegurucompany.be#!page=home</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+    <url>
+        <loc>http://www.thegurucompany.be#!page=about</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+    <url>
+        <loc>http://www.thegurucompany.be#!page=blogs</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+    <url>
+        <loc>http://www.thegurucompany.be#!page=blogs&amp;blog=1</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+    <url>
+        <loc>http://www.thegurucompany.be#!page=blogs&amp;blog=2</loc>
+        <lastmod>2014-07-13</lastmod>
+    </url>
+
+</urlset>

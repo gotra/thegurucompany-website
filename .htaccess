@@ -1,0 +1,7 @@
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+RewriteCond %{QUERY_STRING} ^_escaped_fragment=page=([a-zA-Z0-9]+)$
+RewriteRule ^(.*)$ /htmlsnapshot/%1.html? [L,P,NC]
+

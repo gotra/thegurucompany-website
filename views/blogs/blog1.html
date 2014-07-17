@@ -1,0 +1,37 @@
+<!-- htmlsnapshot pagename="blog1.html" -->
+<div class="blog-post">
+    <h2 class="blog-post-title">How to compile and install GIT on RHEL</h2>
+    <p class="blog-post-meta">January 1, 2014 by <a href="#">Rajeev</a></p>
+
+    <p>Today I was trying to install the latest version of Git on my workstation provided by the client. The workstation had an older version of Git and I needed Git version 1.9 or above to work with intelliJ IDEA version 13.1</p>
+    <hr>
+    <p>Git can be installed either from source or from the console, however its recommended to install from the source if you want the latest.</p>
+    <p>To install Git from source code use the following procedure</p>
+    <ol>
+        <li>Install the libraries Git depends on: <strong>curl, zlib, openssl, expat, and libiconv</strong>
+                    <pre><code># yum install curl-devel expat-devel gettext-devel \
+                        openssl-devel zlib-devel gcc</code></pre>
+        </li>
+        <li>Download the latest snapshot from the Git web site, located here:<a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a></li>
+        <li>Compile and install
+                    <pre>
+                        <code># tar -zxf git-1.9.3.tar.gz
+# cd git-1.9.3
+# make prefix=/usr/local
+# make prefix=/usr/local install
+                        </code>
+                    </pre>
+        </li>
+        <li>Test the installation of Git
+            <pre><code># git -- version</code></pre>
+            It should display you the version of Git.
+        </li>
+    </ol>
+    <p> To install Git from console is quiet simple</p>
+    <pre><code># yum install git</code></pre>
+
+</div><!-- /.blog-post -->
+
+<ul class="pager">
+    <li><a href="#!page=blogs&blog=2">Next</a></li>
+</ul>

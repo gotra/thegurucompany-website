@@ -1,0 +1,27 @@
+<!-- htmlsnapshot pagename="blog2.html" -->
+<div class="blog-post">
+    <h2 class="blog-post-title">Mapping to a view in Spring MVC without controller</h2>
+    <p class="blog-post-meta">February 1, 2014 by <a href="#">Rajeev</a></p>
+
+    <p>If you are writing a spring controller to just return a view without any business logic <strong>STOP NOW!</strong></p>
+    <p>Since spring 3.0 you can use the following tag in your XML configuration</p>
+    <pre><code>&lt;mvc:view-controller path=&quot;/&quot; view-name=&quot;index&quot;/&gt;</code></pre>
+    <p>In case you prefer to use java config file instead of XML use the code below</p>
+                <pre>
+                    <code>
+@Override
+public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("index");
+}
+                </code></pre>
+
+    <blockquote>According Spring <a href="http://static.springsource.org/spring/docs/3.0.x/reference/mvc.html">documentation</a>:
+        <em>This tag is a shorcut for defining a ParameterizableViewController that immediately forwards to a view when invoked. Use it in static cases when there is no Java Controller logic to execute before the view generates the response.</em>
+    </blockquote>
+
+</div><!-- /.blog-post -->
+
+<ul class="pager">
+    <li><a href="#!page=blogs&blog=1">Previous</a></li>
+    <li><a href="#!page=blogs&blog=3">Next</a></li>
+</ul>

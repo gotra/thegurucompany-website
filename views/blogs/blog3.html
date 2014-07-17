@@ -1,0 +1,42 @@
+<!-- htmlsnapshot pagename="blog3.html" -->
+<div class="blog-post">
+    <h2 class="blog-post-title">Log all $emit events in AngularJS</h2>
+    <p class="blog-post-meta">March 1, 2014 by <a href="#">Rajeev</a></p>
+
+    <p>AngularJS has nice functionality to achieve inter application communication using event bus kind of mechanism</p>
+    <p><strong>$emit(name, args)</strong> dispatches an event name upwards through the scope hierarchy notifying the registered $rootScope.Scope listeners</p>
+    <p>However you can quickly have many events and also third party libraries come with their own events. This could be a nightmare to debug</p>
+    <p>Below is a piece of code which you can add to easily log all your emit events on $rootScope.</p>
+                <pre>
+                    <code>
+App.config(['$provide', function ($provide) {
+
+    $provide.decorator('$rootScope', function ($delegate) {
+
+        var originalFn = $delegate.$emit;
+
+        $delegate.$emit = function () {
+
+                console.log.apply(console, arguments);
+
+                originalFn.apply(this, arguments);
+
+        };
+
+        return $delegate;
+
+    );
+
+}]);
+                    </code></pre>
+
+    <blockquote>
+        <em>Please note that for this logging to work all the $emit must be on $rootScope, if you use $scope.$emit, this above logging has to be modified.</em>
+    </blockquote>
+
+</div><!-- /.blog-post -->
+
+<ul class="pager">
+    <li><a href="#!page=blogs&blog=2">Previous</a></li>
+    <li><a href="#!page=blogs&blog=4">Next</a></li>
+</ul>
